@@ -27,7 +27,9 @@
     "psr-4": {
       "app\\": "app",
       "think\\bit\\": "library/think-bit/src/",
-      "cmq\\sdk\\": "library/cmq-php-sdk/src/"
+      "cmq\\sdk\\": "library/cmq-php-sdk/src/",
+      "cmq\\daq\\": "library/cmq-daq-sdk/src/",
+      "mqtt\\trigger\\": "library/mqtt-api-trigger-sdk/src/"
     },
     "psr-0": {
       "": "extend/"
