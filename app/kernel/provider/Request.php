@@ -9,7 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace app;
+namespace app\kernel\provider;
 
 class Request extends \think\Request
 {

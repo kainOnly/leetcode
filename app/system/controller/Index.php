@@ -1,12 +1,12 @@
 <?php
 
-namespace app\controller;
+namespace app\http\system\controller;
 
 use app\BaseController;
 
 class Index extends BaseController
 {
-    public function index()
+    public function set()
     {
         return json([]);
     }

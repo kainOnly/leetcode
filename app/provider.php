@@ -9,8 +9,8 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-use app\ExceptionHandle;
-use app\Request;
+use app\kernel\exception\ExceptionHandle;
+use app\kernel\provider\Request;
 
 // 容器Provider定义文件
 return [
