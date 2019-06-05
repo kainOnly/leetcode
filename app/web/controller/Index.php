@@ -1,6 +1,6 @@
 <?php
 
-namespace app\http\web\controller;
+namespace app\web\controller;
 
 use app\BaseController;
 
@@ -8,15 +8,8 @@ class Index extends BaseController
 {
     public function index()
     {
-        return json([
+        return [
             'error' => 1
-        ]);
-    }
-
-    public function xxx()
-    {
-        return json([
-            'name' => 'kain'
-        ]);
+        ];
     }
 }
