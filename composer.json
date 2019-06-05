@@ -17,11 +17,10 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "ext-swoole": "^4.0.0",
     "topthink/framework": "6.0.*-dev",
     "topthink/think-view": "^1.0",
-    "topthink/think-swoole": "^3.0",
-    "symfony/var-dumper": "^4.2"
+    "symfony/var-dumper": "^4.2",
+    "casbin/casbin": "^0.2.1"
   },
   "autoload": {
     "psr-4": {

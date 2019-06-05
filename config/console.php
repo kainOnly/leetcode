@@ -17,6 +17,5 @@ return [
     'user' => null,
     // 指令定义
     'commands' => [
-        'update' => 'app\command\Update'
     ],
 ];
