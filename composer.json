@@ -1,0 +1,24 @@
+{
+  "name": "kain/think-mgo",
+  "description": "Think Bit MongoDB CURD 扩展",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "kain",
+      "email": "zhangtqx@vip.qq.com"
+    }
+  ],
+  "support": {
+    "docs": "https://think-bit.kain.net.cn",
+    "email": "zhangtqx@vip.qq.com"
+  },
+  "autoload": {
+    "psr-4": {
+      "think\\mgo\\": "src/"
+    }
+  },
+  "require": {
+    "kain/think-bit": "5.1.*",
+    "mongodb/mongodb": "^1.4"
+  }
+}
