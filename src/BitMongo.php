@@ -5,6 +5,10 @@ namespace think\mgo;
 use \MongoDB\Client;
 use think\facade\Config;
 
+/**
+ * Class BitMongo
+ * @package think\mgo
+ */
 final class BitMongo
 {
     private $client;
