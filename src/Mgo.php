@@ -2,14 +2,14 @@
 
 namespace think\mgo;
 
-use MongoDB\Database;
+use MongoDB\Collection;
 use think\Facade;
 
 /**
  * Class Mgo
  * @package think\mgo
- * @method static Database Db($database = '') 指向数据库
- * @method static array Page($database, $collection, $filter = [], $page = 1, $limit = 20, $sort = ['create_time' => -1]) 分页生成
+ * @method static Collection name($collection) 指向集合
+ * @method static array page($collection, $filter = [], $page = 1, $limit = 20, $sort = []) 分页生成
  */
 final class Mgo extends Facade
 {

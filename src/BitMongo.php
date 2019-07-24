@@ -11,33 +11,27 @@ use think\facade\Config;
  */
 final class BitMongo
 {
-    private $client;
     private $database;
 
     public function __construct()
     {
         $config = Config::get('database.mongodb');
-        if (isset($config['database']) && !empty($config['database'])) {
-            $this->database = $config['database'];
-        }
-        $this->client = new Client($config['uri'], $config['uriOptions'], $config['driverOptions']);
+        $client = new Client($config['uri'], $config['uriOptions'], $config['driverOptions']);
+        $this->database = $client->selectDatabase($config['database']);
     }
 
     /**
-     * 指向数据库
-     * @param string $database 数据库名称
-     * @return \MongoDB\Database
+     * 指向集合
+     * @param string $collection 集合名称
+     * @return \MongoDB\Collection
      */
-    public function Db($database = '')
+    public function name($collection)
     {
-        return (!empty($database)) ?
-            $this->client->selectDatabase($database) :
-            $this->client->selectDatabase($this->database);
+        return $this->database->selectCollection($collection);
     }
 
     /**
      * 分页生成
-     * @param string $database 数据库名称
      * @param string $collection 集合名称
      * @param array $filter 条件
      * @param int $page 页码
@@ -45,10 +39,10 @@ final class BitMongo
      * @param array $sort 排序条件
      * @return array
      */
-    public function Page($database, $collection, $filter = [], $page = 1, $limit = 20, $sort = ['create_time' => -1])
+    public function page($collection, $filter = [], $page = 1, $limit = 20, $sort = [])
     {
-        $total = $this->Db($database)->selectCollection($collection)->countDocuments();
-        $lists = $this->Db($database)->selectCollection($collection)->find(
+        $total = $this->name($collection)->countDocuments();
+        $lists = $this->name($collection)->find(
             $filter, [
             'skip' => $page - 1,
             'limit' => $limit,
