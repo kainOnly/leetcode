@@ -41,7 +41,7 @@ final class BitMongo
      */
     public function page($collection, $filter = [], $page = 1, $limit = 20, $sort = [])
     {
-        $total = $this->name($collection)->countDocuments();
+        $total = $this->name($collection)->countDocuments($filter);
         $lists = $this->name($collection)->find(
             $filter, [
             'skip' => $page - 1,
