@@ -1,7 +1,15 @@
 {
   "name": "kain/think-mgo",
-  "description": "Think Bit MongoDB CURD 扩展",
-  "license": "MIT",
+  "description": "ThinkPHP MongoDB CURD 扩展",
+  "require": {
+    "topthink/framework": "^6.0.0",
+    "mongodb/mongodb": "^1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "think\\mgo\\": "src/"
+    }
+  },
   "authors": [
     {
       "name": "kain",
@@ -9,16 +17,8 @@
     }
   ],
   "support": {
-    "docs": "https://think-bit.kain.net.cn",
+    "docs": "https://think-bit.kainonly.com",
     "email": "zhangtqx@vip.qq.com"
   },
-  "autoload": {
-    "psr-4": {
-      "think\\mgo\\": "src/"
-    }
-  },
-  "require": {
-    "topthink/framework": "^6.0.0",
-    "mongodb/mongodb": "^1.4"
-  }
+  "license": "MIT"
 }
