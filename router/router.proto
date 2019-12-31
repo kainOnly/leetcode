@@ -1,5 +1,25 @@
 syntax = "proto3";
 
 service Router {
+    rpc Get (GetParameter) returns (GetResult) {
+    }
+    rpc Set (SetParameter) returns (SetResult) {
+    }
+}
 
+message GetParameter {
+    string key = 1;
+}
+
+message GetResult {
+    string value = 1;
+}
+
+message SetParameter {
+    string key = 1;
+    string value = 2;
+}
+
+message SetResult {
+    bool result = 1;
 }
