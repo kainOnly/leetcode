@@ -1,4 +1,4 @@
-module gRPC-redis
+module redis-gRPC
 
 go 1.13
 
