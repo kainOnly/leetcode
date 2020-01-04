@@ -4,8 +4,12 @@
 package router
 
 import (
+	context "context"
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
+	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	math "math"
 )
 
@@ -206,4 +210,120 @@ var fileDescriptor_367072455c71aedc = []byte{
 	0xd9, 0x3d, 0xb5, 0x44, 0x88, 0x57, 0x0f, 0xd9, 0xd5, 0x52, 0x3c, 0x7a, 0x48, 0x4e, 0x54, 0x62,
 	0x00, 0xa9, 0x0a, 0x06, 0xab, 0x0a, 0x46, 0x55, 0x15, 0x8c, 0xac, 0x2a, 0x89, 0x0d, 0x1c, 0x04,
 	0xc6, 0x80, 0x00, 0x00, 0x00, 0xff, 0xff, 0x9c, 0xb1, 0xbf, 0xdb, 0x12, 0x01, 0x00, 0x00,
+}
+
+// Reference imports to suppress errors if they are not otherwise used.
+var _ context.Context
+var _ grpc.ClientConn
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+const _ = grpc.SupportPackageIsVersion4
+
+// RouterClient is the client API for Router service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type RouterClient interface {
+	Get(ctx context.Context, in *GetParameter, opts ...grpc.CallOption) (*GetResponse, error)
+	Set(ctx context.Context, in *SetParameter, opts ...grpc.CallOption) (*SetResponse, error)
+}
+
+type routerClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewRouterClient(cc *grpc.ClientConn) RouterClient {
+	return &routerClient{cc}
+}
+
+func (c *routerClient) Get(ctx context.Context, in *GetParameter, opts ...grpc.CallOption) (*GetResponse, error) {
+	out := new(GetResponse)
+	err := c.cc.Invoke(ctx, "/Router/Get", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *routerClient) Set(ctx context.Context, in *SetParameter, opts ...grpc.CallOption) (*SetResponse, error) {
+	out := new(SetResponse)
+	err := c.cc.Invoke(ctx, "/Router/Set", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// RouterServer is the server API for Router service.
+type RouterServer interface {
+	Get(context.Context, *GetParameter) (*GetResponse, error)
+	Set(context.Context, *SetParameter) (*SetResponse, error)
+}
+
+// UnimplementedRouterServer can be embedded to have forward compatible implementations.
+type UnimplementedRouterServer struct {
+}
+
+func (*UnimplementedRouterServer) Get(ctx context.Context, req *GetParameter) (*GetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (*UnimplementedRouterServer) Set(ctx context.Context, req *SetParameter) (*SetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Set not implemented")
+}
+
+func RegisterRouterServer(s *grpc.Server, srv RouterServer) {
+	s.RegisterService(&_Router_serviceDesc, srv)
+}
+
+func _Router_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetParameter)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RouterServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Router/Get",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RouterServer).Get(ctx, req.(*GetParameter))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Router_Set_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetParameter)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RouterServer).Set(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Router/Set",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RouterServer).Set(ctx, req.(*SetParameter))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _Router_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "Router",
+	HandlerType: (*RouterServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _Router_Get_Handler,
+		},
+		{
+			MethodName: "Set",
+			Handler:    _Router_Set_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "router.proto",
 }
