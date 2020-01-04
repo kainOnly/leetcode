@@ -2,17 +2,17 @@ package controller
 
 import (
 	"context"
-	pb "gRPC-redis/router"
+	pb "redis-gRPC/router"
 )
 
-func (c *controller) Get(ctx context.Context, query *pb.GetParameter) (*pb.GetResult, error) {
-	return &pb.GetResult{
+func (c *controller) Get(ctx context.Context, query *pb.GetParameter) (*pb.GetResponse, error) {
+	return &pb.GetResponse{
 		Value: "test:" + query.Key,
 	}, nil
 }
 
-func (c *controller) Set(ctx context.Context, query *pb.SetParameter) (*pb.SetResult, error) {
-	return &pb.SetResult{
+func (c *controller) Set(ctx context.Context, query *pb.SetParameter) (*pb.SetResponse, error) {
+	return &pb.SetResponse{
 		Result: true,
 	}, nil
 }

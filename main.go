@@ -1,15 +1,15 @@
 package main
 
 import (
-	"gRPC-redis/controller"
-	pb "gRPC-redis/router"
 	"google.golang.org/grpc"
 	"log"
 	"net"
+	"redis-gRPC/controller"
+	pb "redis-gRPC/router"
 )
 
 func main() {
-	listen, err := net.Listen("tcp", "127.0.0.1:1000")
+	listen, err := net.Listen("tcp", "127.0.0.1:6060")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}

@@ -1,6 +1,6 @@
 package controller
 
-import pb "gRPC-redis/router"
+import pb "redis-gRPC/router"
 
 type controller struct {
 	pb.UnimplementedRouterServer
