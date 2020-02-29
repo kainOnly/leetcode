@@ -1,4 +1,4 @@
-module redis-gRPC
+module redis-microservice
 
 go 1.13
 

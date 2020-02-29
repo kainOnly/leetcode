@@ -2,10 +2,10 @@ package client
 
 import (
 	"context"
-	pb "gRPC-redis/router"
 	"google.golang.org/grpc"
 	"log"
 	"os"
+	pb "redis-microservice/router"
 	"testing"
 )
 
@@ -25,7 +25,7 @@ func TestMain(m *testing.M) {
 }
 
 func TestSet(t *testing.T) {
-	var response *pb.GetResult
+	var response *pb.GetResponse
 	defer conn.Close()
 	response, err = client.Get(context.Background(), &pb.GetParameter{
 		Key: "kain",

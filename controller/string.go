@@ -2,7 +2,7 @@ package controller
 
 import (
 	"context"
-	pb "redis-gRPC/router"
+	pb "redis-microservice/router"
 )
 
 func (c *controller) Get(ctx context.Context, query *pb.GetParameter) (*pb.GetResponse, error) {
