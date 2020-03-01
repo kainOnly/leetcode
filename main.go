@@ -4,8 +4,8 @@ import (
 	"google.golang.org/grpc"
 	"log"
 	"net"
-	"redis-gRPC/controller"
-	pb "redis-gRPC/router"
+	"redis-microservice/controller"
+	pb "redis-microservice/router"
 )
 
 func main() {
