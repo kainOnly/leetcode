@@ -1,0 +1,6 @@
+{
+  "name": "think-bit-doc",
+  "scripts": {
+    "start": "docsify serve"
+  }
+}
