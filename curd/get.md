@@ -125,7 +125,7 @@ class AdminClass extends BaseController implements GetBeforeHooks {
 如需要给接口在后端就设定固定条件，只需要重写 **get_condition**，默认为
 
 ```php
-[];
+$get_condition = [];
 ```
 
 例如加入企业主键限制
@@ -141,6 +141,63 @@ class AdminClass extends BaseController {
     protected $get_condition = [
         ['enterprise', '=', 1]
     ];
+}
+```
+
+如果接口的查询条件较为特殊，可以重写 **get_condition_query**
+
+```php
+use app\system\controller\BaseController;
+use think\bit\common\GetModel;
+use think\App;
+use think\db\Query;
+
+class AdminClass extends BaseController {
+    use GetModel;
+
+    protected $model = 'admin';
+    
+    public function construct(App $app = null)
+    {
+        parent::construct($app);
+        $this->get_condition_query = function (Query $query) {
+            $query->json(['schema'])
+        };
+    }
+}
+```
+
+#### 排序
+
+在条件查询下使用排序，只需要重写 **get_orders**，默认为
+
+```php
+$get_orders = ['create_time' => 'desc'];
+```
+
+多属性排序
+
+```php
+use app\system\controller\BaseController;
+use think\bit\common\GetModel;
+
+class AdminClass extends BaseController {
+    use GetModel;
+
+    protected $model = 'admin';
+    protected $lists_orders = ['age', 'create_time' => 'desc'];
+}
+```
+
+排序同样允许请求 `body` 来合并定义，例如：
+
+- **order** `object` 排序条件
+
+```json
+{
+    "order": {
+        "age": "desc"
+    }
 }
 ```
 

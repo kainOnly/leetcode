@@ -210,6 +210,18 @@ class AdminClass extends BaseController {
 }
 ```
 
+排序同样允许请求 `body` 来合并定义，例如：
+
+- **order** `object` 排序条件
+
+```json
+{
+    "order": {
+        "age": "desc"
+    }
+}
+```
+
 #### 指定返回字段
 
 如需要给接口限制返回字段，只需要重写 **origin_lists_field**，默认为
