@@ -25,7 +25,7 @@ EditModel 修改数据的通用请求处理，请求 `body` 可使用 **id** 或
 }
 ```
 
-#### 初始化
+### 初始化
 
 将 **think\bit\common\EditModel** 引入，然后定义模型 **model** 的名称（即表名称）
 
@@ -40,7 +40,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 自定义修改验证器
+### 自定义修改验证器
 
 自定义删除验证器为 **edit_default_validate**，默认为
 
@@ -69,7 +69,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 验证器下 edit 场景
+### 验证器下 edit 场景
 
 应创建验证器场景 **validate/AdminClass**，**edit_switch** 为 `false` 下有效， 并加入场景 `edit`
 
@@ -88,7 +88,7 @@ class AdminClass extends Validate
 }
 ```
 
-#### 判断是否有前置处理
+### 判断是否有前置处理
 
 如自定义前置处理（发生在验证之后与数据写入之前），则需要继承生命周期 **think\bit\lifecycle\EditBeforeHooks**
 
@@ -141,7 +141,7 @@ class AdminClass extends BaseController implements EditBeforeHooks {
 }
 ```
 
-#### 判断是否有后置处理
+### 判断是否有后置处理
 
 如自定义后置处理（发生在写入成功之后与提交事务之前），则需要继承生命周期 **think\bit\lifecycle\EditAfterHooks**
 

@@ -2,7 +2,7 @@
 
 Helper 助手函数扩展，此服务必须安装 `kain/think-extra`
 
-#### uuid()
+### uuid()
 
 生成 uuid v4
 
@@ -35,7 +35,7 @@ dump($uuid->toString());
 // "a2bcf1d5-2be3-4dc6-8cd4-937835a18a8b"
 ```
 
-#### stringy($str = '', $encoding = null)
+### stringy($str = '', $encoding = null)
 
 创建一个Stringy字符串操作工具
 

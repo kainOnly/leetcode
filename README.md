@@ -43,6 +43,7 @@ return [
 - [kain/think-amqp](https://packagist.org/packages/kain/think-amqp) ThinkPHP RabbitMQ 消息队列 AMQP 操作类
 - [kain/think-elastic](https://packagist.org/packages/kain/think-elastic) ThinkPHP ElasticSearch 扩展
 - [kain/think-aliyun-extra](https://packagist.org/packages/kain/think-aliyun-extra) ThinkPHP 阿里云相关扩展
+- [kain/think-huaweicloud-extra](https://packagist.org/packages/kain/think-huaweicloud-extra) ThinkPHP 华为云相关扩展
 
 
 #### 依赖安装

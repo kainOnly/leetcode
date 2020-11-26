@@ -28,9 +28,9 @@ class Index extends BaseController
 }
 ```
 
-#### encrypt($context)
+### encrypt($context): string
 
-加密数据
+加密数据内容
 
 - **context** `string|array` 数据
 - **Return** `string` 密文
@@ -49,13 +49,13 @@ Cipher::encrypt([
 // IyGcnXqDT6ersFhAKdduUQ==
 ```
 
-#### decrypt(string $ciphertext, bool $auto_conver = true)
+### decrypt(string $ciphertext, bool $auto_conver = true)
 
 解密数据
 
 - **ciphertext** `string` 密文
 - **auto_conver** `bool` 数据属于数组时是否自动转换
-- **Return** `string|array` 明文
+- **Return** `string|array` 解密内容
 
 ```php
 use think\support\facade\Cipher;

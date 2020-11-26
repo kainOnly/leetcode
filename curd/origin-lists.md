@@ -36,7 +36,7 @@ OriginListsModel 列表数据的通用请求处理，请求 `body` 使用数组�
 }
 ```
 
-#### 初始化
+### 初始化
 
 将 **think\bit\common\OriginListsModel** 引入，然后定义模型 **model** 的名称（即表名称）
 
@@ -51,7 +51,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 验证器下 origin 场景
+### 验证器下 origin 场景
 
 创建验证器场景 **validate/AdminClass**， 并加入场景 `origin`
 
@@ -111,7 +111,7 @@ class NoBodyClass extends BaseController {
 }
 ```
 
-#### 判断是否有前置处理
+### 判断是否有前置处理
 
 如自定义前置处理，则需要继承生命周期 **think\bit\lifecycle\OriginListsBeforeHooks**
 
@@ -164,7 +164,7 @@ class AdminClass extends BaseController implements OriginListsBeforeHooks {
 }
 ```
 
-#### 固定条件
+### 固定条件
 
 如需要给接口在后端就设定固定条件，只需要重写 **origin_lists_condition**，默认为
 
@@ -188,7 +188,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 列表排序
+### 列表排序
 
 如果需要列表按条件排序，只需要重写 **origin_lists_orders**，默认为
 
@@ -222,7 +222,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 指定返回字段
+### 指定返回字段
 
 如需要给接口限制返回字段，只需要重写 **origin_lists_field**，默认为
 
@@ -245,7 +245,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 自定义返回结果
+### 自定义返回结果
 
 如自定义返回结果，则需要继承生命周期 **think\bit\lifecycle\OriginListsCustom**
 

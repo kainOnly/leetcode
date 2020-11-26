@@ -12,7 +12,7 @@ class Main extends BaseController
 }
 ```
 
-#### refreshTokenExpires()
+### refreshTokenExpires(): int
 
 设置令牌自动刷新的总时效，通过重写自定义
 
@@ -33,7 +33,7 @@ class Main extends BaseController
 }
 ```
 
-#### create(string $scene, array $symbol = [])
+### create(string $scene, array $symbol = []): array
 
 创建登录鉴权
 
@@ -65,7 +65,7 @@ class Main extends BaseController
 }
 ```
 
-#### authVerify(string $scene)
+### authVerify(string $scene): array
 
 验证登录
 
@@ -86,7 +86,38 @@ class Main extends BaseController
 }
 ```
 
-#### destory(string $scene)
+### authHook(array $symbol): array
+
+验证返回钩子
+
+- **symbol** `array` 标识
+
+```php
+use app\system\controller\BaseController;
+use think\support\traits\Auth;
+
+class Main extends BaseController
+{
+    use Auth;
+
+    protected function authHook(array $symbol): array
+    {
+        $data = AdminRedis::create()->get($symbol['user']);
+        if (empty($data)) {
+            return [
+                'error' => 1,
+                'msg' => 'freeze'
+            ];
+        }
+        return [
+            'error' => 0,
+            'msg' => 'ok'
+        ];
+    }
+}
+```
+
+### destory(string $scene): array
 
 销毁登录鉴权
 

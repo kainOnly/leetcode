@@ -2,7 +2,7 @@
 
 手机短信验证码缓存类
 
-#### factory($phone, $code, $timeout)
+### factory(string $phone, string $code, int $timeout = 120): string
 
 设置手机验证码缓存
 
@@ -15,7 +15,7 @@
 Sms::create()->factory('12345678910', '13125');
 ```
 
-#### check($phone, $code, $once)
+### check(string $phone, string $code, bool $once = false): bool
 
 验证手机验证码
 
@@ -40,12 +40,12 @@ dump($checked);
 // false
 ```
 
-#### time($phone)
+### time(string $phone): array
 
 获取验证时间
 
 - **phone** `string` 手机号
-- **Return** `bool|array`
+- **Return** `array`
 
 ```php
 $sms = Sms::create();

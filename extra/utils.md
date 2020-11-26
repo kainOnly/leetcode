@@ -16,7 +16,7 @@ class Index extends BaseController
 }
 ```
 
-#### jump(string $msg, string $url = '', string $type = 'html'): Jump
+### jump(string $msg, string $url = '', string $type = 'html'): Jump
 
 - **msg** `string` 跳转信息
 - **url** `string` 回调Url

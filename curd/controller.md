@@ -18,12 +18,12 @@ abstract class Base extends CurdController
 }
 ```
 
-#### 公共属性
+### 公共属性
 
 - **model** `string` 模型名称
 - **post** `array` 请求body，默认 `[]`
 
-#### 获取列表数据请求属性
+### 获取列表数据请求属性
 
 - **origin_lists_default_validate** `array` 列表数据默认验证，默认
 
@@ -62,7 +62,7 @@ abstract class Base extends CurdController
 ];
 ```
 
-#### 获取分页数据请求属性
+### 获取分页数据请求属性
 
 - **lists_default_validate** `array` 分页数据默认验证器，默认
 
@@ -104,7 +104,7 @@ abstract class Base extends CurdController
 ];
 ```
 
-#### 获取单条数据请求属性
+### 获取单条数据请求属性
 
 - **get_default_validate** `array` 单条数据默认验证器，默认
 
@@ -135,7 +135,7 @@ abstract class Base extends CurdController
 ];
 ```
 
-#### 新增数据请求属性
+### 新增数据请求属性
 
 - **add_model** `string` 分离新增模型名称，默认 `null`
 - **add_default_validate** `array` 新增数据默认验证器，默认 `[]`
@@ -167,7 +167,7 @@ abstract class Base extends CurdController
 ];
 ```
 
-#### 修改数据请求属性
+### 修改数据请求属性
 
 - **edit_model** `string` 分离编辑模型名称，默认 `null`
 - **edit_default_validate** `array` 编辑默认验证器，默认
@@ -209,7 +209,7 @@ abstract class Base extends CurdController
 ];
 ```
 
-#### 删除数据请求属性
+### 删除数据请求属性
 
 - **delete_model** `string` 分离删除模型名称，默认 `null`
 - **delete_default_validate** `array` 删除默认验证器，默认

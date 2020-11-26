@@ -2,7 +2,7 @@
 
 AddModel 新增数据的通用请求处理
 
-#### 初始化
+### 初始化
 
 将 **think\bit\common\AddModel** 引入，然后定义模型 **model** 的名称（即表名称）
 
@@ -17,7 +17,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 验证器下 add 场景
+### 验证器下 add 场景
 
 创建验证器场景 **validate/AdminClass**， 并加入场景 `add`
 
@@ -36,7 +36,7 @@ class AdminClass extends Validate
 }
 ```
 
-#### 判断是否有前置处理
+### 判断是否有前置处理
 
 如自定义前置处理（发生在验证之后与数据写入之前），则需要继承生命周期 **think\bit\lifecycle\AddBeforeHooks**
 
@@ -89,7 +89,7 @@ class AdminClass extends BaseController implements AddBeforeHooks {
 }
 ```
 
-#### 判断是否有后置处理
+### 判断是否有后置处理
 
 如自定义后置处理（发生在写入成功之后与提交事务之前），则需要调用生命周期 **think\bit\lifecycle\AddAfterHooks**
 

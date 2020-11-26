@@ -36,7 +36,7 @@ ListsModel 分页数据的通用请求处理，请求 `body` 使用数组查询�
 }
 ```
 
-#### 初始化
+### 初始化
 
 将 **think\bit\common\ListsModel** 引入，然后定义模型 **model** 的名称（即表名称）
 
@@ -51,7 +51,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 判断是否有前置处理
+### 判断是否有前置处理
 
 如自定义前置处理，则需要调用生命周期 **think\bit\lifecycle\ListsBeforeHooks**
 
@@ -103,7 +103,7 @@ class AdminClass extends BaseController implements ListsBeforeHooks {
 }
 ```
 
-#### 固定条件
+### 固定条件
 
 如需要给接口在后端就设定固定条件，只需要重写 **lists_condition**，默认为
 
@@ -152,7 +152,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 列表排序
+### 列表排序
 
 如果需要列表按条件排序，只需要重写 **lists_orders**，默认为
 
@@ -187,7 +187,7 @@ class AdminClass extends BaseController {
 ```
 
 
-#### 指定返回字段
+### 指定返回字段
 
 如需要给接口限制返回字段，只需要重写 **lists_field** 或 **lists_without_field**，默认为
 
@@ -210,7 +210,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 自定义返回结果
+### 自定义返回结果
 
 如自定义返回结果，则需要继承生命周期 **think\bit\lifecycle\ListsCustom**
 

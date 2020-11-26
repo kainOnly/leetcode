@@ -19,6 +19,7 @@
   - [AMQP 消息队列](component/amqp)
   - [ElasticSearch 全文搜索](component/elastic)
   - [阿里云相关扩展](component/aliyun)
+  - [华为云相关扩展](component/huaweicloud)
 
 - Middleware 中间件
   - [CORS 跨站设置](middleware/cors)

@@ -25,7 +25,7 @@ DeleteModel 删除数据的通用请求处理，请求 `body` 可使用 **id** �
 }
 ```
 
-#### 初始化
+### 初始化
 
 将 **think\bit\common\DeleteModel** 引入，然后定义模型 **model** 的名称（即表名称）
 
@@ -40,7 +40,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 自定义删除验证器
+### 自定义删除验证器
 
 自定义删除验证器为 **delete_validate**，默认为
 
@@ -67,7 +67,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 判断是否有前置处理
+### 判断是否有前置处理
 
 如自定义前置处理（发生在验证之后与数据删除之前），则需要继承生命周期 **think\bit\lifecycle\DeleteBeforeHooks**
 
@@ -120,7 +120,7 @@ class AdminClass extends BaseController implements DeleteBeforeHooks {
 }
 ```
 
-#### 判断是否有存在事务开始之后与数据删除之前的处理
+### 判断是否有存在事务开始之后与数据删除之前的处理
 
 如该周期处理，则需要继承生命周期 **think\bit\lifecycle\DeletePrepHooks**
 
@@ -173,7 +173,7 @@ class AdminClass extends BaseController implements DeletePrepHooks {
 }
 ```
 
-#### 判断是否有后置处理
+### 判断是否有后置处理
 
 如自定义后置处理（发生在数据删除成功之后与提交事务之前），则需要继承生命周期 **think\bit\lifecycle\DeleteAfterHooks**
 

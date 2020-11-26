@@ -39,7 +39,7 @@ class Index extends BaseController
 }
 ```
 
-#### create($password, $options = [])
+### create(string $password, array $options = [])
 
 加密密码
 
@@ -52,12 +52,12 @@ use think\support\facade\Hash;
 Hash::create('123456789');
 ```
 
-#### check($password, $hashPassword)
+### check(string $password, string $hashPassword): bool
 
 验证密码
 
 - **password** `string` 密码
-- **hashPassword** `string` 密码散列值
+- **hashPassword** `string` 散列密码
 
 ```php
 use think\support\facade\Hash;

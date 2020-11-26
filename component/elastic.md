@@ -44,7 +44,7 @@ return [
 - **selector** `SelectorInterface|string` 设置选择器
 - **serializer** `SerializerInterface|string` 设置序列化器
 
-#### client(string $label = 'default')
+### client(string $label = 'default')
 
 - **label** `string` 配置label
 - **Return** `Elasticsearch\Client`

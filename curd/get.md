@@ -25,7 +25,7 @@ GetModel 获取单条数据的通用请求处理，请求 `body` 可使用 **id*
 }
 ```
 
-#### 初始化
+### 初始化
 
 将 **think\bit\common\GetModel** 引入，然后定义模型 **model** 的名称（即表名称）
 
@@ -40,7 +40,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 自定义获取验证器
+### 自定义获取验证器
 
 自定义验证器为 **get_default_validate** ，验证器与ThinkPHP验证器使用一致，默认为
 
@@ -67,7 +67,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 判断是否有前置处理
+### 判断是否有前置处理
 
 如自定义前置处理，则需要继承生命周期 **think\bit\lifecycle\GetBeforeHooks**
 
@@ -120,7 +120,7 @@ class AdminClass extends BaseController implements GetBeforeHooks {
 }
 ```
 
-#### 固定条件
+### 固定条件
 
 如需要给接口在后端就设定固定条件，只需要重写 **get_condition**，默认为
 
@@ -167,7 +167,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 排序
+### 排序
 
 在条件查询下使用排序，只需要重写 **get_orders**，默认为
 
@@ -201,7 +201,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 指定返回字段
+### 指定返回字段
 
 如需要给接口指定返回字段，只需要重写 **get_field** 或 **get_without_field**，默认为
 
@@ -226,7 +226,7 @@ class AdminClass extends BaseController {
 }
 ```
 
-#### 自定义返回结果
+### 自定义返回结果
 
 如自定义返回结果，则需要继承生命周期 **think\bit\lifecycle\GetCustom**
 
