@@ -52,9 +52,9 @@ return [
 写入文档
 
 ```php
-use think\support\facade\Elastic;
+use think\support\facade\ES;
 
-$response = Elastic::client()->index([
+$response = ES::client()->index([
     'index' => 'test',
     'id' => 'test',
     'body' => [
@@ -81,9 +81,9 @@ $response = Elastic::client()->index([
 获取文档
 
 ```php
-use think\support\facade\Elastic;
+use think\support\facade\ES;
 
-$response = Elastic::client()->get([
+$response = ES::client()->get([
     'index' => 'test',
     'id' => 'test'
 ]);
@@ -105,9 +105,9 @@ $response = Elastic::client()->get([
 搜索文档
 
 ```php
-use think\support\facade\Elastic;
+use think\support\facade\ES;
 
-$response = Elastic::client()->search([
+$response = ES::client()->search([
     'index' => 'test',
     'body' => [
         'query' => [
@@ -151,9 +151,9 @@ $response = Elastic::client()->search([
 删除文档
 
 ```php
-use think\support\facade\Elastic;
+use think\support\facade\ES;
 
-$response = Elastic::client()->delete([
+$response = ES::client()->delete([
     'index' => 'test',
     'id' => 'test'
 ]);
@@ -177,9 +177,9 @@ $response = Elastic::client()->delete([
 删除索引
 
 ```php
-use think\support\facade\Elastic;
+use think\support\facade\ES;
 
-$response = Elastic::client()->indices()->delete([
+$response = ES::client()->indices()->delete([
     'index' => 'test',
 ]);
 
@@ -191,9 +191,9 @@ $response = Elastic::client()->indices()->delete([
 创建索引
 
 ```php
-use think\support\facade\Elastic;
+use think\support\facade\ES;
 
-$response = Elastic::client()->indices()->create([
+$response = ES::client()->indices()->create([
     'index' => 'test'
 ]);
 
