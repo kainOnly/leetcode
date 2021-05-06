@@ -22,5 +22,6 @@ class TestLongestSubstringWithoutRepeatingCharacters(unittest.TestCase):
     def test_example5(self):
         self.assertEqual(self.sol.longestPalindrome('aacabdkacaa'), 'aca')
 
+
 if __name__ == '__main__':
     unittest.main()
