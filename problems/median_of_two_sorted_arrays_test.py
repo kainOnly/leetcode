@@ -31,6 +31,12 @@ class TestLongestSubstringWithoutRepeatingCharacters(unittest.TestCase):
     def test_example8(self):
         self.assertEqual(self.sol.findMedianSortedArrays([1], [1]), 1)
 
+    def test_example9(self):
+        self.assertEqual(self.sol.findMedianSortedArrays([1, 2], [1, 1]), 1)
+
+    def test_example10(self):
+        self.assertEqual(self.sol.findMedianSortedArrays([2, 2, 2], [2, 2, 2, 2]), 2)
+
 
 if __name__ == '__main__':
     unittest.main()
