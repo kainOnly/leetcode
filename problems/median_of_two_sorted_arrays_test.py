@@ -2,7 +2,7 @@ import unittest
 from .median_of_two_sorted_arrays import Solution
 
 
-class TestLongestSubstringWithoutRepeatingCharacters(unittest.TestCase):
+class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.sol = Solution()

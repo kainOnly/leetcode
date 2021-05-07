@@ -2,7 +2,7 @@ import unittest
 from .longest_palindromic_substring import Solution
 
 
-class TestLongestSubstringWithoutRepeatingCharacters(unittest.TestCase):
+class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.sol = Solution()

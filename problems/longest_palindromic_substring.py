@@ -1,3 +1,4 @@
+# TODO:待优化
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         palindrome = s[0]

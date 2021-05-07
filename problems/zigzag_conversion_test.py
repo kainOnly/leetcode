@@ -2,7 +2,7 @@ import unittest
 from .zigzag_conversion import Solution
 
 
-class TestLongestSubstringWithoutRepeatingCharacters(unittest.TestCase):
+class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.sol = Solution()

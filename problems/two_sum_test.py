@@ -2,7 +2,7 @@ import unittest
 from .two_sum import Solution
 
 
-class TestTwoSum(unittest.TestCase):
+class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.sol = Solution()
