@@ -18,3 +18,9 @@ class Test(unittest.TestCase):
 
     def test_example4(self):
         self.assertEqual(self.sol.reverse(0), 0)
+
+    def test_example5(self):
+        self.assertEqual(self.sol.reverse(9646324351), 0)
+
+    def test_example6(self):
+        self.assertEqual(self.sol.reverse(1534236469), 0)
