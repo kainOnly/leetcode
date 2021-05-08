@@ -23,4 +23,7 @@ class Test(unittest.TestCase):
         self.assertEqual(self.sol.myAtoi('-91283472332'), -2147483648)
 
     def test_example6(self):
-        self.assertEqual(self.sol.myAtoi('+-12'), -12)
+        self.assertEqual(self.sol.myAtoi('+-12'), 0)
+
+    def test_example7(self):
+        self.assertEqual(self.sol.myAtoi('+1'), 1)

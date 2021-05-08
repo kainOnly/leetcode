@@ -1,17 +1,21 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
         Int32Min, Int32Max = -2147483648, 2147483647
-        val, sign = 0, 1
-        for char in s:
-            if char == ' ' or char == '+':
+        val, sign = 0, 0
+        for char in s.strip():
+            if sign == 0 and char.isspace():
                 continue
-            if char == '-':
-                sign = -sign
+            if sign == 0 and char == '+':
+                sign = 1
+                continue
+            if sign == 0 and char == '-':
+                sign = -1
                 continue
             if char.isnumeric():
-                n = int(char)
+                if sign == 0:
+                    sign = 1
                 val *= 10
-                val += n * sign
+                val += int(char) * sign
                 if val < Int32Min:
                     val = Int32Min
                     break
