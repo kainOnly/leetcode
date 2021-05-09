@@ -1,32 +1,29 @@
 from typing import List
 
 
-# TODO:未解决，待理解
-
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        m = len(nums1)
-        n = len(nums2)
-        length = m + n
-        even = length % 2 == 0
-
-        k = int((length + 1) / 2)
-        if m == 0 or n == 0:
-            if m == 0:
-                return float((nums2[k - 1] + nums2[k]) / 2 if even else nums2[k - 1])
-            if n == 0:
-                return float((nums1[k - 1] + nums1[k]) / 2 if even else nums1[k - 1])
-
-        i = int(k / 2) - 1
+        length = len(nums1) + len(nums2)
+        if length == 0:
+            return float(0)
+        odd = length % 2 != 0
+        k = (length + 1) // 2
+        if len(nums1) == 0:
+            return nums2[k - 1] if odd else (nums2[k - 1] + nums2[k]) / 2
+        if len(nums2) == 0:
+            return nums1[k - 1] if odd else (nums1[k - 1] + nums1[k]) / 2
+        if nums1[-1] > nums2[-1]:
+            tmp = nums1
+            nums1 = nums2
+            nums2 = tmp
         while k != 1:
-            if nums1[i] <= nums2[i]:
-                nums1 = nums1[i + 1:]
+            cursor = k // 2 - 1
+            if nums1[cursor] < nums2[cursor]:
+                nums1 = nums1[cursor + 1:]
             else:
-                nums2 = nums2[i + 1:]
-            k = k - int(k / 2)
-            i = int(k / 2) - 1
-
-        if even:
-            return float(nums1[0] + nums2[0] if len(nums1) <= len(nums2) else nums1[0] + nums1[1]) / 2
+                nums2 = nums2[cursor + 1:]
+            k -= k // 2
+        if odd:
+            return nums1[0] if nums1[0] < nums2[0] else nums2[0]
         else:
-            return float(nums1[0] if nums1[0] < nums2[0] else nums2[0])
+            return (nums1[0] + nums1[1] if len(nums1) > len(nums2) else nums1[0] + nums2[0]) / 2
