@@ -43,6 +43,15 @@ class Test(unittest.TestCase):
     def test_example12(self):
         self.assertEqual(self.sol.findMedianSortedArrays([1], [2, 3]), 2)
 
+    def test_example13(self):
+        self.assertEqual(self.sol.findMedianSortedArrays([1, 2, 3], [4]), 2.5)
+
+    def test_example14(self):
+        self.assertEqual(self.sol.findMedianSortedArrays([5], [1, 2, 3, 4, 6]), 3.5)
+
+    def test_example15(self):
+        self.assertEqual(self.sol.findMedianSortedArrays([3, 4], [1, 2, 5, 6]), 3.5)
+
 
 if __name__ == '__main__':
     unittest.main()
