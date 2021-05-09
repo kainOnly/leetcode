@@ -8,15 +8,17 @@ class Solution:
             return float(0)
         odd = length % 2 != 0
         k = (length + 1) // 2
-        if len(nums1) == 0:
-            return nums2[k - 1] if odd else (nums2[k - 1] + nums2[k]) / 2
-        if len(nums2) == 0:
-            return nums1[k - 1] if odd else (nums1[k - 1] + nums1[k]) / 2
-        if nums1[-1] > nums2[-1]:
-            tmp = nums1
-            nums1 = nums2
-            nums2 = tmp
-        while k != 1:
+        while True:
+            if len(nums1) == 0:
+                return nums2[k - 1] if odd else (nums2[k - 1] + nums2[k]) / 2
+            if len(nums2) == 0:
+                return nums1[k - 1] if odd else (nums1[k - 1] + nums1[k]) / 2
+            if k == 1:
+                break
+            if nums1[-1] > nums2[-1] or len(nums1) > len(nums2):
+                tmp = nums1
+                nums1 = nums2
+                nums2 = tmp
             cursor = k // 2 - 1
             if nums1[cursor] < nums2[cursor]:
                 nums1 = nums1[cursor + 1:]
