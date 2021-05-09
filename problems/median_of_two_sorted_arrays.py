@@ -1,6 +1,6 @@
 from typing import List
 
-
+# TODO: 待解决，边界思考
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         length = len(nums1) + len(nums2)
@@ -25,14 +25,13 @@ class Solution:
         if odd:
             return min(nums1[0], nums2[0])
         else:
-            print(nums1, nums2)
             if len(nums1) + len(nums2) == 2:
                 return (nums1[0] + nums2[0]) / 2
             if len(nums1) > len(nums2):
                 tmp = nums1
                 nums1 = nums2
                 nums2 = tmp
-            if nums1[0] > nums2[0]:
-                return (nums2[0] + nums2[1] if len(nums2) > 1 else nums2[0] + nums1[0]) / 2
-            else:
+            if nums1[0] <= nums2[0]:
                 return (nums1[0] + nums1[1] if len(nums1) > 1 else nums1[0] + nums2[0]) / 2
+            else:
+                return (nums2[0] + nums2[1] if len(nums2) > 1 else nums1[0] + nums2[0]) / 2
