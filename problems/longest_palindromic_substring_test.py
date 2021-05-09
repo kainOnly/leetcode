@@ -22,6 +22,12 @@ class Test(unittest.TestCase):
     def test_example5(self):
         self.assertEqual(self.sol.longestPalindrome('aacabdkacaa'), 'aca')
 
+    def test_example6(self):
+        self.assertEqual(self.sol.longestPalindrome('ccc'), 'ccc')
+
+    def test_example7(self):
+        self.assertEqual(self.sol.longestPalindrome('caba'), 'aba')
+
 
 if __name__ == '__main__':
     unittest.main()
