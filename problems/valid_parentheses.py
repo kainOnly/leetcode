@@ -10,10 +10,9 @@ class Solution:
         stack = []
         for char in s:
             if char in find:
-                if len(stack) > 0 and stack[-1] != find[char]:
+                if not stack or stack[-1] != find[char]:
                     return False
-                else:
-                    stack.pop()
+                stack.pop()
             else:
                 stack.append(char)
-        return True
+        return not stack

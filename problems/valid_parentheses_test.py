@@ -21,3 +21,9 @@ class Test(unittest.TestCase):
 
     def test_example5(self):
         self.assertEqual(self.sol.isValid('{[]}'), True)
+
+    def test_example6(self):
+        self.assertEqual(self.sol.isValid('(('), False)
+
+    def test_example7(self):
+        self.assertEqual(self.sol.isValid('(]'), False)
