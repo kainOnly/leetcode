@@ -15,6 +15,8 @@ class ListNode:
 
 class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
+        if not head:
+            return head
         prev, cursor = head, head
         while cursor.next:
             cursor = cursor.next
