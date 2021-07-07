@@ -15,3 +15,6 @@ class Test(unittest.TestCase):
 
     def test_example3(self):
         self.assertEqual(self.sol.containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2), False)
+
+    def test_example4(self):
+        self.assertEqual(self.sol.containsNearbyDuplicate([99, 99], 2), True)
